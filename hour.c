@@ -5,9 +5,9 @@ void printWords()
 {
    int h,m;
 
-    printf("Hrs:");
+    printf("Hours:");
     scanf("%d",&h);
-    printf("Mins:");
+    printf("Minutes:");
     scanf("%d", &m);
     char time[][64] = { "zero", "one", "two", "three", "four",
                         "five", "six", "seven", "eight", "nine",
@@ -21,38 +21,38 @@ void printWords()
 
  switch(m){
     case 0:
-        printf("%s o' clock\n", time[(h % 12)]);
+        printf("%s o' clock\n", time[h]);
         break;
  
     case  1:
-        printf("one minute past %s\n", time[(h % 12)]);
+        printf("one minute past %s\n", time[h]);
         break;
  
     case 59:
-        printf("one minute to %s\n", time[(h % 12) + 1]);
+        printf("one minute to %s\n", time[h + 1]);
          break;
  
 
     case 15:
-        printf("quarter past %s\n", time[(h % 12)]);
+        printf("quarter past %s\n", time[h]);
         break;
  
     case 30:
-        printf("half past %s\n", time[(h % 12)]);
+        printf("half past %s\n", time[h]);
         break;
  
     case 45:
-        printf("quarter to %s\n", time[(h % 12) + 1]);
+        printf("quarter to %s\n", time[h + 1]);
         break;
         }
  
     if (m <= 30){
-        printf("%s minutes past %s\n",time[m], time[(h % 12)]);
+        printf("%s minutes past %s\n",time[m], time[h]);
         }
  
     else if (m > 30 && m<=60){
         printf("%s minutes to %s\n", time[60 - m],
-                                     time[(h % 12) + 1]);
+                                     time[h + 1]);
         }
 
     else
@@ -64,4 +64,3 @@ int main()
     printWords();
     return 0;
 }
-
